@@ -1,0 +1,32 @@
+Class order: ['Battery', 'Keyboard', 'Microwave', 'Mobile', 'Mouse', 'PCB', 'Player', 'Printer', 'Television', 'Washing Machine']
+
+Confusion matrix:
+[[33  1  0  0  0  2  1  0  0  1]
+ [ 0 30  0  0  0  0  0  0  0  0]
+ [ 0  0 29  0  0  0  0  0  1  0]
+ [ 0  0  0 29  0  0  0  0  1  0]
+ [ 0  0  0  0 29  0  0  1  0  0]
+ [ 0  0  0  0  0 29  1  0  0  0]
+ [ 0  0  0  0  0  0 30  0  0  0]
+ [ 1  0  0  0  0  0  0 29  0  0]
+ [ 0  1  1  0  0  1  0  0 27  0]
+ [ 1  0  0  0  0  0  0  0  0 29]]
+
+                 precision    recall  f1-score   support
+
+        Battery       0.94      0.87      0.90        38
+       Keyboard       0.94      1.00      0.97        30
+      Microwave       0.97      0.97      0.97        30
+         Mobile       1.00      0.97      0.98        30
+          Mouse       1.00      0.97      0.98        30
+            PCB       0.91      0.97      0.94        30
+         Player       0.94      1.00      0.97        30
+        Printer       0.97      0.97      0.97        30
+     Television       0.93      0.90      0.92        30
+Washing Machine       0.97      0.97      0.97        30
+
+       accuracy                           0.95       308
+      macro avg       0.96      0.96      0.96       308
+   weighted avg       0.96      0.95      0.95       308
+
+Overall test accuracy: 0.9545

@@ -1,0 +1,373 @@
+{
+  "keyboard": {
+    "description": "A computer input device used to enter text, numbers and commands.",
+    "uses": [
+      "Typing",
+      "Keyboard shortcuts",
+      "Gaming and computer navigation"
+    ],
+    "materials": [
+      "Plastic keycaps and housing",
+      "Copper wiring",
+      "Small metal contacts",
+      "Circuit-board materials"
+    ],
+    "components": [
+      "Keycaps and switches",
+      "Membrane or mechanical switch assembly",
+      "Controller board",
+      "Cable or wireless battery if present"
+    ],
+    "hazards": [
+      "Wireless models may contain batteries.",
+      "Circuit boards should not be burned.",
+      "Dust or residues can collect between keys."
+    ],
+    "safety": [
+      "Unplug before cleaning.",
+      "Remove only user-removable batteries.",
+      "Do not burn or dismantle electronics without suitable training."
+    ],
+    "reusable": [
+      "Working keyboard",
+      "Compatible keycaps or switches",
+      "Cable or receiver in good condition"
+    ],
+    "repair": [
+      "Check cable, connector or batteries.",
+      "Clean carefully while disconnected.",
+      "Use compatible replacement parts."
+    ],
+    "recommendation": [
+      "Reuse or donate if working.",
+      "Otherwise send to an authorized e-waste collection or recycler."
+    ],
+    "disposal": [
+      "Keep separate from ordinary mixed waste where e-waste collection is available."
+    ]
+  },
+  "battery": {
+    "description": "A device that stores electrical energy. Exact chemistry depends on the battery type.",
+    "uses": [
+      "Portable device power",
+      "Backup power"
+    ],
+    "materials": [
+      "May include lithium compounds, nickel, lead, steel, aluminium and plastics depending on chemistry."
+    ],
+    "components": [
+      "Cell or cells",
+      "Terminals",
+      "Protective casing",
+      "Battery management circuitry in some packs"
+    ],
+    "hazards": [
+      "Fire, short circuit or chemical leakage if damaged.",
+      "Some chemistries contain hazardous substances."
+    ],
+    "safety": [
+      "Never puncture, crush, burn or short-circuit.",
+      "Do not handle swollen, hot, leaking or damaged batteries; seek professional guidance.",
+      "Follow the collection facility's transport instructions."
+    ],
+    "reusable": [
+      "Only batteries assessed as safe and serviceable by a qualified professional."
+    ],
+    "repair": [
+      "Do not open sealed battery packs yourself. Ask a qualified technician to assess them."
+    ],
+    "recommendation": [
+      "Use a battery take-back scheme or authorized battery/e-waste recycler."
+    ],
+    "disposal": [
+      "Do not place loose batteries in fire or regular trash; follow local battery collection rules."
+    ]
+  },
+  "laptop": {
+    "description": "A portable computer containing processing, storage, display and power components.",
+    "uses": [
+      "Study and work",
+      "Communication",
+      "Content creation and entertainment"
+    ],
+    "materials": [
+      "Plastic or aluminium enclosure",
+      "Copper wiring",
+      "Display materials",
+      "Circuit boards",
+      "Battery materials"
+    ],
+    "components": [
+      "Motherboard and processor",
+      "RAM and storage",
+      "Display",
+      "Keyboard and touchpad",
+      "Battery and charger"
+    ],
+    "hazards": [
+      "Lithium-ion batteries can be hazardous if damaged.",
+      "Stored personal data may remain on drives."
+    ],
+    "safety": [
+      "Back up and securely erase data before transfer.",
+      "Do not puncture or open a battery pack.",
+      "Ask a professional about swollen or damaged batteries."
+    ],
+    "reusable": [
+      "Working laptop",
+      "Compatible RAM or storage after assessment",
+      "Charger or other tested parts"
+    ],
+    "repair": [
+      "Ask a technician about battery, storage, RAM, keyboard or display repair.",
+      "Check warranty first."
+    ],
+    "recommendation": [
+      "Repair, refurbish or donate if safe and functional; otherwise use an authorized e-waste recycler."
+    ],
+    "disposal": [
+      "Use a recycler that can safely manage batteries and data-bearing storage."
+    ]
+  },
+  "mobile phone": {
+    "description": "A handheld communication device with a display, cameras, electronics and rechargeable battery.",
+    "uses": [
+      "Calls and messaging",
+      "Internet and applications",
+      "Photography"
+    ],
+    "materials": [
+      "Glass and plastics",
+      "Aluminium and other metals",
+      "Copper",
+      "Circuit-board materials",
+      "Battery materials"
+    ],
+    "components": [
+      "Display",
+      "Mainboard",
+      "Camera modules",
+      "Speakers and microphones",
+      "Rechargeable battery"
+    ],
+    "hazards": [
+      "Lithium-ion battery may catch fire if damaged.",
+      "Personal data may remain on the device."
+    ],
+    "safety": [
+      "Back up data, sign out of accounts, remove SIM and memory cards, and securely erase data.",
+      "Do not puncture or remove a glued-in battery yourself."
+    ],
+    "reusable": [
+      "Working phone after data removal",
+      "Compatible accessories",
+      "Parts assessed by a professional"
+    ],
+    "repair": [
+      "Ask a qualified technician about screen, battery or charging-port faults."
+    ],
+    "recommendation": [
+      "Repair, trade in, donate or refurbish if functional; otherwise use a take-back scheme or authorized recycler."
+    ],
+    "disposal": [
+      "Do not put phones in general waste; use a dedicated collection route."
+    ]
+  },
+  "charger": {
+    "description": "A power adapter that supplies electricity suitable for a compatible electronic device.",
+    "uses": [
+      "Charging devices",
+      "Supplying power to electronics"
+    ],
+    "materials": [
+      "Plastic casing",
+      "Copper wiring",
+      "Metal contacts",
+      "Circuit-board materials"
+    ],
+    "components": [
+      "Plug and cable",
+      "Power-conversion circuit",
+      "Connector",
+      "Insulating enclosure"
+    ],
+    "hazards": [
+      "Damaged insulation can cause electric shock.",
+      "Burnt, cracked or unusually hot chargers may be unsafe."
+    ],
+    "safety": [
+      "Disconnect before inspection.",
+      "Do not open mains adapters.",
+      "Replace damaged chargers with compatible certified products."
+    ],
+    "reusable": [
+      "Undamaged charger that works with the intended device."
+    ],
+    "repair": [
+      "Have repairs performed by a qualified service."
+    ],
+    "recommendation": [
+      "Reuse if safe and compatible; otherwise use e-waste collection."
+    ],
+    "disposal": [
+      "Do not open the adapter or place it in mixed waste where e-waste collection is available."
+    ]
+  },
+  "mouse": {
+    "description": "A pointing device used to control the cursor on a computer.",
+    "uses": [
+      "Clicking and selecting",
+      "Scrolling",
+      "Computer navigation"
+    ],
+    "materials": [
+      "Plastic shell",
+      "Copper wiring",
+      "Small circuit board",
+      "Metal or plastic wheel parts"
+    ],
+    "components": [
+      "Buttons and switches",
+      "Optical sensor",
+      "Controller board",
+      "Cable or wireless battery"
+    ],
+    "hazards": [
+      "Wireless models may contain a battery.",
+      "Circuit boards should not be burned."
+    ],
+    "safety": [
+      "Disconnect before cleaning.",
+      "Remove only user-replaceable batteries."
+    ],
+    "reusable": [
+      "Working mouse",
+      "Cable or compatible receiver"
+    ],
+    "repair": [
+      "Check sensor, cable, receiver or battery; replace only compatible parts."
+    ],
+    "recommendation": [
+      "Reuse or donate if working; otherwise use e-waste collection."
+    ],
+    "disposal": [
+      "Keep separate from general waste where e-waste collection is available."
+    ]
+  },
+  "monitor": {
+    "description": "An electronic display used to show computer output.",
+    "uses": [
+      "Displaying documents",
+      "Viewing applications and video"
+    ],
+    "materials": [
+      "Glass or display-panel materials",
+      "Plastic or metal enclosure",
+      "Circuit boards and wiring"
+    ],
+    "components": [
+      "Display panel",
+      "Power supply",
+      "Controller board",
+      "Stand and cables"
+    ],
+    "hazards": [
+      "Broken screens can cause cuts.",
+      "Older display technologies may need specialized handling.",
+      "Do not open the power supply."
+    ],
+    "safety": [
+      "Do not break the screen or open the power supply.",
+      "Transport carefully to avoid damage."
+    ],
+    "reusable": [
+      "Working monitor, stand and cables after inspection."
+    ],
+    "repair": [
+      "Have screen, power and connector faults checked by a qualified technician."
+    ],
+    "recommendation": [
+      "Reuse or donate if functional; otherwise use an authorized e-waste recycler."
+    ],
+    "disposal": [
+      "Do not break the display or leave it at an informal dumping site."
+    ]
+  },
+  "circuit board": {
+    "description": "An electronic board that connects and supports electronic components.",
+    "uses": [
+      "Controlling or processing electrical signals in devices"
+    ],
+    "materials": [
+      "Fiberglass or resin laminate",
+      "Copper traces",
+      "Solder",
+      "Electronic components and small amounts of various metals"
+    ],
+    "components": [
+      "Integrated circuits",
+      "Connectors",
+      "Capacitors and resistors",
+      "Copper tracks"
+    ],
+    "hazards": [
+      "Some boards or components may contain substances requiring controlled processing.",
+      "Cut edges may be sharp."
+    ],
+    "safety": [
+      "Do not burn, sand or chemically treat circuit boards.",
+      "Use trained handling for damaged assemblies."
+    ],
+    "reusable": [
+      "Tested compatible boards or components after professional assessment."
+    ],
+    "repair": [
+      "Diagnosis and component replacement require appropriate electronics skills."
+    ],
+    "recommendation": [
+      "Use a specialist e-waste recycler with circuit-board recovery processes."
+    ],
+    "disposal": [
+      "Do not burn boards or recover metals with household chemicals."
+    ]
+  },
+  "headphones": {
+    "description": "An audio accessory that converts electrical signals into sound.",
+    "uses": [
+      "Listening to audio",
+      "Calls and meetings"
+    ],
+    "materials": [
+      "Plastic or metal housing",
+      "Copper wiring",
+      "Magnets and speaker parts",
+      "Battery in wireless models"
+    ],
+    "components": [
+      "Speaker drivers",
+      "Cable or wireless electronics",
+      "Microphone",
+      "Battery in wireless models"
+    ],
+    "hazards": [
+      "Wireless models may contain rechargeable batteries.",
+      "Damaged cables may expose conductors."
+    ],
+    "safety": [
+      "Disconnect wired headphones before cleaning.",
+      "Do not open or puncture a wireless battery."
+    ],
+    "reusable": [
+      "Working headphones, cable or compatible earpads."
+    ],
+    "repair": [
+      "Check cable, connector, earpads or battery with a qualified technician."
+    ],
+    "recommendation": [
+      "Reuse or donate if functional; otherwise use e-waste collection."
+    ],
+    "disposal": [
+      "Do not place wireless headphones with built-in batteries in general waste."
+    ]
+  }
+}
