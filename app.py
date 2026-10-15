@@ -21,9 +21,11 @@ from PIL import Image, ImageOps, UnidentifiedImageError
 # ---------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------
+
 BASE_DIR = Path(__file__).resolve().parent
-MODEL_PATH = BASE_DIR / "models" / "ewaste_model.keras"
-CLASSES_PATH = BASE_DIR / "models" / "class_names.json"
+
+MODEL_PATH = BASE_DIR / "ewaste_model.keras"
+CLASSES_PATH = BASE_DIR / "class_names.json"
 INFO_PATH = BASE_DIR / "ewaste_info.json"
 
 IMAGE_SIZE = (224, 224)
