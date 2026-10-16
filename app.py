@@ -7,6 +7,7 @@ Run: python -m streamlit run app.py
 from __future__ import annotations
 
 import hashlib
+from io import BytesIO
 import json
 import logging
 from html import escape
@@ -21,11 +22,9 @@ from PIL import Image, ImageOps, UnidentifiedImageError
 # ---------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------
-
 BASE_DIR = Path(__file__).resolve().parent
-
-MODEL_PATH = BASE_DIR / "ewaste_model.keras"
-CLASSES_PATH = BASE_DIR / "class_names.json"
+MODEL_PATH = BASE_DIR / "models" / "ewaste_model.keras"
+CLASSES_PATH = BASE_DIR / "models" / "class_names.json"
 INFO_PATH = BASE_DIR / "ewaste_info.json"
 
 IMAGE_SIZE = (224, 224)
@@ -494,11 +493,11 @@ st.markdown(
     .stat-val { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-top: 2px; }
 
     .disclaimer {
-        margin-top: 3rem; padding: 18px 22px;
-        border: 1px solid var(--line); border-radius: 16px;
-        background: linear-gradient(180deg, rgba(23,48,60,.45), rgba(18,38,48,.55));
-        color: var(--muted); font-size: .88rem; line-height: 1.65; max-width: 95ch;
-    }
+    margin-top: 3rem; padding: 18px 0;
+    border: none; background: none; border-radius: 0;
+    color: var(--muted); font-size: .88rem; line-height: 1.65;
+    text-align: center; max-width: 100%;
+}
 
     @media (max-width: 900px) {
         .spec-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -2106,32 +2105,57 @@ def main() -> None:
     file_hash: str | None = None
 
     with upload_col:
-        uploaded = st.file_uploader(
-            "Upload an image",
-            type=["jpg", "jpeg", "png"],
-            help="Show the whole device in good light and avoid blurry images.",
+        input_mode = st.radio(
+            "Choose image source",
+            ["Upload from Files", "Use Camera"],
+            horizontal=True,
+            key="ewaste_input_mode",
         )
-        show_html(f'<p class="hint">JPG or PNG, up to {MAX_UPLOAD_MB} MB. Show the whole item in good light.</p>')
 
-        if uploaded is not None:
-            if uploaded.size > MAX_UPLOAD_MB * 1024 * 1024:
-                st.error(f"Image is too large. Please upload an image under {MAX_UPLOAD_MB} MB.")
-            else:
-                try:
-                    raw_bytes = uploaded.getvalue()
+        selected_file = None
+        if input_mode == "Upload from Files":
+            selected_file = st.file_uploader(
+                "Choose an e-waste image",
+                type=["jpg", "jpeg", "png"],
+                help="Select a JPG or PNG image from your phone or computer.",
+                key="ewaste_file_upload",
+            )
+        else:
+            selected_file = st.camera_input(
+                "Take a photo of the e-waste item",
+                help="Allow camera permission if your browser asks.",
+                key="ewaste_camera_capture",
+            )
+
+        show_html(
+            f'<p class="hint">JPG or PNG, up to {MAX_UPLOAD_MB} MB. '
+            'Show the whole item in good light.</p>'
+        )
+
+        if selected_file is not None:
+            try:
+                raw_bytes = selected_file.getvalue()
+                if len(raw_bytes) > MAX_UPLOAD_MB * 1024 * 1024:
+                    st.error(
+                        f"Image is too large. Please use an image under {MAX_UPLOAD_MB} MB."
+                    )
+                else:
                     file_hash = hashlib.sha256(raw_bytes).hexdigest()
-                    image = ImageOps.exif_transpose(Image.open(uploaded)).convert("RGB")
-                    st.image(image)
-                except (UnidentifiedImageError, OSError, ValueError):
-                    image, file_hash = None, None
-                    st.error("This image could not be opened. Please upload a JPG or PNG image.")
+                    with Image.open(BytesIO(raw_bytes)) as source_image:
+                        image = ImageOps.exif_transpose(source_image).convert("RGB")
+                    st.image(image, caption="Selected e-waste image", use_container_width=True)
+            except (UnidentifiedImageError, OSError, ValueError):
+                image, file_hash = None, None
+                st.error(
+                    "This image could not be opened. Please choose a valid JPG or PNG image."
+                )
 
-        use_tta = st.toggle(
-            "Higher accuracy mode",
-            value=True,
-            help="Checks the image and its mirror image, then averages the scores. Slightly slower, usually more reliable.",
+        use_tta = True
+        run_button = st.button(
+            "✦  Classify image",
+            type="primary",
+            disabled=image is None or file_hash is None,
         )
-        run_button = st.button("✦  Classify image", type="primary", disabled=image is None)
 
         if run_button and image is not None and file_hash is not None:
             try:
@@ -2167,8 +2191,7 @@ def main() -> None:
 
     if not has_result:
         show_html(
-            '<div class="disclaimer">This tool classifies visible images only and gives general guidance. '
-            'Always verify the item before acting on safety or disposal advice.</div>'
+            '<div class="disclaimer">Designed & developed by Sanskar_Sumit_309_319</div>'
         )
         st.stop()
 
@@ -2330,9 +2353,7 @@ def main() -> None:
         ))
 
     show_html(
-        '<div class="disclaimer">___________________________________________'
-        '_________________________________________'
-        '__________________________________________________</div>'
+        '<div class="disclaimer">Designed & developed by Sanskar_Sumit_309_319</div>'
     )
 
 
